@@ -9,7 +9,9 @@
              
         </meta>
         <id name="id" column="idmembres" type="int">
-            <generator class="native"/>
+            <generator class="native">
+            <param name="sequence">membres_idmembres_seq</param>
+            </generator>
         </id>
         
         <property name="nomMembres" column="nommembres" type="string"/>

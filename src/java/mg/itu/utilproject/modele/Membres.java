@@ -5,14 +5,14 @@ import java.util.List;
 
 public class Membres extends BaseModele {
 
-    public String nomMembres;
-    public String prenomMembres;
-    public Date datenaissance;
-    public String mail;
-    public String mdp;
-    public List<Roles> roles;
-    public List<Commentaire> commentaire;
-    public List<Projet> projet;
+    private String nomMembres;
+    private String prenomMembres;
+    private Date datenaissance;
+    private String mail;
+    private String mdp;
+    private List<Roles> roles;
+    private List<Commentaire> commentaire;
+    private List<Projet> projet;
 
     public Membres(){}
     
