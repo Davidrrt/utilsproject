@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+ "-//Hibernate/Hibernate Mapping DTD//EN"
+ "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd"> 
+
+<hibernate-mapping>
+    <class name="mg.itu.utilproject.modele.Membres" table="membres">
+        <meta attribute="class-description">
+             
+        </meta>
+        <id name="id" column="idmembres" type="int">
+            <generator class="native">
+            <param name="sequence">membres_idmembres_seq</param>
+            </generator>
+        </id>
+        
+        <property name="nomMembres" column="nommembres" type="string"/>
+        <property name="prenomMembres" column="prenommembres" type="string"/>
+        <property name="datenaissance" column="datenaissance" type="date"/>
+        <property name="mail" column="mail" type="string"/>
+        <property name="mdp" column="mdp" type="string"/>
+    </class>
+</hibernate-mapping>
