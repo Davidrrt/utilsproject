@@ -1,33 +1,32 @@
 package mg.itu.utilproject.modele;
 
-import java.sql.Date;
+import java.util.Date;
 import java.util.List;
-import mg.itu.utilproject.modele.Commentaire;
 
-public class Membres extends BaseModele{
+public class Membres extends BaseModele {
 
-    //private long idMembres;
     public String nomMembres;
     public String prenomMembres;
-    public String datenaissance;
+    public Date datenaissance;
     public String mail;
     public String mdp;
     public List<Roles> roles;
     public List<Commentaire> commentaire;
     public List<Projet> projet;
 
-    public Membres( String nomMembres, String prenomMembres, String datenaissance, String mail, String mdp) {
-        this.nomMembres = nomMembres;
-        this.prenomMembres = prenomMembres;
-        this.datenaissance = datenaissance;
-        this.mail = mail;
-        this.mdp = mdp;
+    public Membres(){}
+    
+    public Membres(String nomMembrs, String prenomMembrs, Date datenaissanc, String mai, String md) {
+        this.nomMembres = nomMembrs;
+        this.prenomMembres = prenomMembrs;
+        this.datenaissance = datenaissanc;
+        this.mail = mai;
+        this.mdp = md;
     }
 
     public String getNomMembres() {
         return nomMembres;
     }
-
     public void setNomMembres(String nomMembres) {
         this.nomMembres = nomMembres;
     }
@@ -40,11 +39,11 @@ public class Membres extends BaseModele{
         this.prenomMembres = prenomMembres;
     }
 
-    public String getDatenaissance() {
+    public Date getDatenaissance() {
         return datenaissance;
     }
 
-    public void setDatenaissance(String datenaissance) {
+    public void setDatenaissance(Date datenaissance) {
         this.datenaissance = datenaissance;
     }
 
@@ -63,5 +62,6 @@ public class Membres extends BaseModele{
     public void setMdp(String mdp) {
         this.mdp = mdp;
     }
+
     
 }

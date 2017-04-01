@@ -7,10 +7,7 @@ package mg.itu.utilproject.service;
 
 import mg.itu.utilproject.dao.HibernateDao;
 import mg.itu.utilproject.dao.HibernateUtil;
-import mg.itu.utilproject.modele.Employee;
 import mg.itu.utilproject.modele.Membres;
-import org.hibernate.Session;
-import org.hibernate.SessionFactory;
 
 /**
  *
@@ -18,8 +15,11 @@ import org.hibernate.SessionFactory;
  */
 public class MembresService {
     private HibernateUtil conn;
-    private HibernateDao session;
+    public HibernateDao session;
     
+    public MembresService(){
+        
+    }
     public MembresService(HibernateDao sess){
         this.session= sess;
     }

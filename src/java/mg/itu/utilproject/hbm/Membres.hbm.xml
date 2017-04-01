@@ -6,15 +6,15 @@
 <hibernate-mapping>
     <class name="mg.itu.utilproject.modele.Membres" table="membres">
         <meta attribute="class-description">
-            This class contains the employee detail. 
+             
         </meta>
-        <id name="id" type="int" column="idmembres">
+        <id name="id" column="idmembres" type="int">
             <generator class="native"/>
         </id>
         
         <property name="nomMembres" column="nommembres" type="string"/>
         <property name="prenomMembres" column="prenommembres" type="string"/>
-        <property name="datenaissance" column="datenaissance" type="string"/>
+        <property name="datenaissance" column="datenaissance" type="date"/>
         <property name="mail" column="mail" type="string"/>
         <property name="mdp" column="mdp" type="string"/>
     </class>

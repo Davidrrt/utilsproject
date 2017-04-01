@@ -5,7 +5,8 @@
  */
 package mg.itu.utilproject.service;
 
-import java.sql.Date;
+import java.util.Date;
+import java.text.SimpleDateFormat;
 import mg.itu.utilproject.dao.HibernateDao;
 import mg.itu.utilproject.dao.HibernateUtil;
 import mg.itu.utilproject.modele.Membres;
@@ -49,7 +50,8 @@ public class MembresServiceTest {
     @Test
     public void testEnregistrer() throws Exception {
         System.out.println("enregistrer");
-        Membres membre = new Membres( "andri", "ange", "2017-02-02", "test@test.mg", "root");
+        Date init = new SimpleDateFormat("dd/MM/yyyy").parse("02/02/2017");
+        Membres membre = new Membres( "andri", "ange", init, "test@test.mg", "root");
         MembresService instance = new MembresService(hd);
         instance.enregistrer(membre);
     }
