@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+ "-//Hibernate/Hibernate Mapping DTD//EN"
+ "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd"> 
+
+<hibernate-mapping>
+    <class name="mg.itu.utilproject.modele.Projet" table="projet">
+        <meta attribute="class-description">
+             
+        </meta>
+        <id name="id" column="idprojet" type="int">
+            <generator class="native">
+            <param name="sequence">projet_idprojet_seq</param>
+            </generator>
+        </id>
+        <property name="idmembres" column="idmembres" type="int"/>
+        <property name="titreProjet" column="titreprojet" type="string"/>
+        <property name="descriptionProjet" column="descriptionprojet" type="string"/>
+        <property name="dateDebutPro" column="datedebutpro" type="date"/>
+        <property name="dateFinPro" column="datefinpro" type="date"/>
+        <property name="deadlinePro" column="deadlinepro" type="date"/>
+    </class>
+</hibernate-mapping>

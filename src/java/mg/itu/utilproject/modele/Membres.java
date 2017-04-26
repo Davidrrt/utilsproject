@@ -1,21 +1,19 @@
 package mg.itu.utilproject.modele;
 
+import java.io.Serializable;
 import java.util.Date;
-import java.util.List;
 
-public class Membres extends BaseModele {
+public class Membres extends BaseModele implements Serializable {
 
     private String nomMembres;
     private String prenomMembres;
     private Date datenaissance;
     private String mail;
     private String mdp;
-    private List<Roles> roles;
-    private List<Commentaire> commentaire;
-    private List<Projet> projet;
 
-    public Membres(){}
-    
+    public Membres() {
+    }
+
     public Membres(String nomMembrs, String prenomMembrs, Date datenaissanc, String mai, String md) {
         this.nomMembres = nomMembrs;
         this.prenomMembres = prenomMembrs;
@@ -27,6 +25,7 @@ public class Membres extends BaseModele {
     public String getNomMembres() {
         return nomMembres;
     }
+
     public void setNomMembres(String nomMembres) {
         this.nomMembres = nomMembres;
     }
@@ -63,5 +62,4 @@ public class Membres extends BaseModele {
         this.mdp = mdp;
     }
 
-    
 }

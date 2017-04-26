@@ -11,7 +11,7 @@
         <property name="hibernate.connection.driver_class">org.postgresql.Driver</property>
         <property name="hibernate.connection.url">jdbc:postgresql://localhost:5432/utilsproject</property>
         <property name="hibernate.connection.username">postgres</property>
-        <property name="hibernate.connection.password">itu</property>
+        <property name="hibernate.connection.password">fotsinavalona</property>
         <property name="hibernate.dialect">org.hibernate.dialect.PostgreSQLDialect</property>
 
 
@@ -19,16 +19,10 @@
 
         <!-- Echo all executed SQL to stdout -->
         <property name="show_sql">true</property>
-        <mapping resource="mg/itu/utilproject/hbm/Colonnes.hbm.xml"/>
-        <mapping resource="mg/itu/utilproject/hbm/Commentaire.hbm.xml"/>
-        <mapping resource="mg/itu/utilproject/hbm/ContenuCol.hbm.xml"/>
-        <mapping resource="mg/itu/utilproject/hbm/Corbeille.hbm.xml"/>
+        
         <mapping resource="mg/itu/utilproject/hbm/Feuille.hbm.xml"/>
         <mapping resource="mg/itu/utilproject/hbm/Membres.hbm.xml"/>
-        <mapping resource="mg/itu/utilproject/hbm/Projet.hbm.xml"/>
-        <mapping resource="mg/itu/utilproject/hbm/Roles.hbm.xml"/>
-        <mapping resource="mg/itu/utilproject/hbm/Services.hbm.xml"/>
-        <mapping resource="mg/itu/utilproject/hbm/SousTache.hbm.xml"/>
+        <mapping resource="mg/itu/utilproject/hbm/Projet.hbm.xml"/>   
         <mapping resource="mg/itu/utilproject/hbm/Tache.hbm.xml"/>
 
     </session-factory>

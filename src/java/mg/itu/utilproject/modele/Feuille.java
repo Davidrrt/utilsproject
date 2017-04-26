@@ -1,23 +1,30 @@
 package mg.itu.utilproject.modele;
 
-public class Feuille {
+import java.util.List;
 
-    private long idfeuille;
+public class Feuille extends BaseModele{
+
+    private int idprojet;
     private String nomfeuille;
     private String typefeuille;
+    private List<Taches> taches;
 
-    public Feuille(long idfeuille, String nomfeuille, String typefeuille) {
-        this.idfeuille = idfeuille;
+
+    public Feuille(int idproj,String nomfeuille, String typefeuille) {
+        this.idprojet=idproj;
         this.nomfeuille = nomfeuille;
         this.typefeuille = typefeuille;
     }
 
-    public long getIdfeuille() {
-        return idfeuille;
+    public Feuille() {
     }
 
-    public void setIdfeuille(long idfeuille) {
-        this.idfeuille = idfeuille;
+    public int getIdprojet() {
+        return idprojet;
+    }
+
+    public void setIdprojet(int idprojet) {
+        this.idprojet = idprojet;
     }
 
     public String getNomfeuille() {
@@ -36,4 +43,11 @@ public class Feuille {
         this.typefeuille = typefeuille;
     }
 
+    public List<Taches> getTaches() {
+        return taches;
+    }
+
+    public void setTaches(List<Taches> tachs) {
+        this.taches = tachs;
+    }
 }

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+ "-//Hibernate/Hibernate Mapping DTD//EN"
+ "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd"> 
+
+<hibernate-mapping>
+    <class name="mg.itu.utilproject.modele.Taches" table="taches">
+        <meta attribute="class-description">
+             
+        </meta>
+        <id name="id" column="idtache" type="int">
+            <generator class="native">
+                <param name="sequence">taches_idtache_seq</param>
+            </generator>
+        </id>
+        <property name="idprojet" column="idprojet" type="int"/>
+        <property name="description" column="description" type="string"/>
+        <property name="dateDebut" column="datedebut" type="date"/>
+        <property name="dateFin" column="datefin" type="date"/>
+        <property name="predecesseur" column="predecesseur" type="int"/>
+        <property name="deadlineTache" column="deadlinetache" type="date"/>
+        <property name="idmere" column="idmere" type="int"/>
+        <property name="ligne" column="ligne" type="int"/>
+                
+        <subclass class="mg.itu.utilproject.modele.Ressource" table="ressource">
+            <one-to-one name="one" class="mg.itu.utilproject.modele.Membres" />
+            <one-to-one name="association" class="mg.itu.utilproject.modele.BaseModele" />
+        </subclass>
+    </class>
+</hibernate-mapping>

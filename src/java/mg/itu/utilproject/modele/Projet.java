@@ -1,26 +1,17 @@
 package mg.itu.utilproject.modele;
 
 import java.util.Date;
-import java.util.List;
-import mg.itu.utilproject.modele.Colonnes;
-import mg.itu.utilproject.modele.Corbeille;
 
-public class Projet {
+public class Projet extends BaseModele {
 
-    private long idProjet;
+    private int idmembres;
     private String titreProjet;
     private String descriptionProjet;
     private Date dateDebutPro;
     private Date dateFinPro;
     private Date deadlinePro;
-    private List<Taches> taches;
-    private List<Services> services;
-    private List<Corbeille> corbeille;
-    private List<Feuille> feuille;
-    private List<Colonnes> colonnes;
 
-    public Projet(long idProjet, String titreProjet, String descriptionProjet, Date dateDebutPro, Date dateFinPro, Date deadlinePro) {
-        this.idProjet = idProjet;
+    public Projet(String titreProjet, String descriptionProjet, Date dateDebutPro, Date dateFinPro, Date deadlinePro) {
         this.titreProjet = titreProjet;
         this.descriptionProjet = descriptionProjet;
         this.dateDebutPro = dateDebutPro;
@@ -28,12 +19,15 @@ public class Projet {
         this.deadlinePro = deadlinePro;
     }
 
-    public long getIdProjet() {
-        return idProjet;
+    public Projet() {
     }
 
-    public void setIdProjet(long idProjet) {
-        this.idProjet = idProjet;
+    public int getIdmembres() {
+        return idmembres;
+    }
+
+    public void setIdmembres(int idmembres) {
+        this.idmembres = idmembres;
     }
 
     public String getTitreProjet() {

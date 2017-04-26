@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+ "-//Hibernate/Hibernate Mapping DTD//EN"
+ "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd"> 
+
+<hibernate-mapping>
+    <class name="mg.itu.utilproject.modele.Feuille" table="feuille">
+        <meta attribute="class-description">
+             
+        </meta>
+        <id name="id" column="idfeuille" type="int">
+            <generator class="native">
+            <param name="sequence">feuille_idfeuille_seq</param>
+            </generator>
+        </id>
+        <property name="idprojet" column="idprojet" type="int"/>
+        <property name="nomfeuille" column="nomfeuille" type="string"/>
+        <property name="typefeuille" column="typefeuille" type="string"/>  
+    </class>
+</hibernate-mapping>
