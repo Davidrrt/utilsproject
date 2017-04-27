@@ -13,25 +13,7 @@
     }%>
 <!DOCTYPE html>
 <html lang="fr">
-    <head>
-        <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-        <meta charset="utf-8">
-        <title>Smart Sheet</title>
-        <meta name="generator" content="Bootply" />
-        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-        <link href="assets/css/bootstrap.min.css" rel="stylesheet">
-        <link href="assets/css/styles.css" rel="stylesheet">
-        <link rel="stylesheet" href="assets/css/font-awesome.min.css">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-        <link href="assets/css/style1.css" rel="stylesheet">
-        <style>
-            body{
-                background-color:#FFF;
-            }
-        </style>
-        <link href="assets/css/style-responsive.css" rel="stylesheet">
-        <script src="assets/js/chart-master/Chart.js"></script>
-    </head>
+  <jsp:include page="include/header.jsp"/>
     <body>
         <div id="top-nav" class="navbar navbar-inverse navbar-static-top">
             <div class="container-fluid">
@@ -54,12 +36,6 @@
                                 </li>
                             </ul>
                         </li>
-                        <form class="navbar-form navbar-right inline-form">
-                            <div class="form-group">
-                                <input type="search" class="input-sm form-control" placeholder="Recherche ...">
-                                <button type="submit" class="btn btn-primary btn-sm"><i class="fa fa-search"></i></button>
-                            </div>
-                        </form>
                     </ul>
                     <ul class="nav navbar-nav navbar-right"> 
                         <li><a href="feuille">Back Office</a></li>
@@ -132,7 +108,7 @@
                                     <th>durée en jour</th>
                                 </tr> 
                             </thead> 
-                            <tbody>
+                        
                                 <% for (int i = 0; i < note.size(); i++) { %>
                                 <tr>
                                     <td><% out.print(note.get(i).getDescription()); %></td>
@@ -142,15 +118,16 @@
                                     <td><% out.print(note.get(i).getDuree()); %></td>
                                 </tr>
                                 <% }%>
-                            </tbody>
                         </table>
                     </div>
                 </div>
 
             </div>
         </div>
- 
-     <script src="assets/js/jquery.js"></script>
+ </body>
+</html>
+
+    <script src="assets/js/jquery.js" ></script>
     <script src="assets/js/bootstrap.min.js"></script>
     <script src="assets/js/scripts.js"></script>
     <script src="assets/js/fonction.js"></script>
@@ -161,5 +138,4 @@
     <script type="text/javascript" src="assets/js/gritter/js/jquery.gritter.js"></script>
     <script type="text/javascript" src="assets/js/gritter-conf.js"></script>
 
-</body>
-</html>
+

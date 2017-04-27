@@ -25,6 +25,20 @@
                        
         </property>
     </bean>
-    
+    <bean id="membresservice" class="mg.itu.utilproject.service.MembresService">
+        <property name="session" ref="hbdao">
+                       
+        </property>
+    </bean>
+    <bean id="projetservice" class="mg.itu.utilproject.service.ProjetService">
+        <property name="session" ref="hbdao">
+                       
+        </property>
+    </bean>
+    <bean id="taskservice" class="mg.itu.utilproject.service.TacheService">
+        <property name="session" ref="hbdao">
+                       
+        </property>
+    </bean>
 
 </beans>

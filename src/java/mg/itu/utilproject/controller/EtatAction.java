@@ -1,4 +1,3 @@
-
 package mg.itu.utilproject.controller;
 
 import java.util.List;
@@ -13,7 +12,7 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
  *
  * @author davra
  */
-public class RessourceAction {
+public class EtatAction {
 
     private final static String SUCCESS = "success";
     private final static String FAILURE = "failure";
@@ -22,15 +21,12 @@ public class RessourceAction {
     public String execute() {
         try {
             HttpServletRequest request = ServletActionContext.getRequest();
-            if ((request.getParameter("id") != null) && (request.getSession().getAttribute("utilisateur") != null)) {
+            if ((request.getParameter("id") != null)&&(request.getSession().getAttribute("utilisateur") != null))  {
                 ApplicationContext c = new ClassPathXmlApplicationContext("bean.xml");
                 ProjetService util = c.getBean(ProjetService.class);
                 Ressource t = new Ressource();
-                t.setIdprojet(Integer.parseInt(request.getParameter("id")));
+                t.setId2(Integer.parseInt(request.getParameter("id")));
                 table = util.recupRessource(t);
-
-                util.recupRessource(table);
-                System.out.print("========================>" + table.get(0).getNom());
                 return SUCCESS;
             }
         } catch (Exception e) {
@@ -38,11 +34,13 @@ public class RessourceAction {
         }
         return FAILURE;
     }
-     public List<Ressource> getTable() {
+
+    public List<Ressource> getTable() {
         return table;
     }
 
     public void setTable(List<Ressource> table) {
         this.table = table;
     }
+
 }

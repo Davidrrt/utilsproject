@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+ "-//Hibernate/Hibernate Mapping DTD//EN"
+ "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd"> 
+
+<hibernate-mapping>
+    <class name="mg.itu.utilproject.modele.Ressource" table="Ressource">
+        <meta attribute="class-description">
+             
+        </meta>
+        <id name="id" column="id" type="int">
+            <generator class="native">
+                <param name="sequence">taches_idtache_seq</param>
+            </generator>
+        </id>
+    
+        <property name="id1" column="id1" type="int"/>
+        <property name="id2" column="id2" type="int"/>
+        <property name="valeur" column="valeur" type="float"/>
+        <property name="remarque" column="remarque" type="string"/>
+        <property name="idprojet" column="idprojet" type="int"/>
+        <property name="nom" column="nommembres" type="string"/>
+        <property name="prenom" column="prenommembres" type="string"/>
+        
+    </class>
+</hibernate-mapping>

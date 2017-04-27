@@ -59,6 +59,26 @@ public class TacheService extends BaseService {
         this.decal(session, t, (-1) * val[1], val[0]);
         return val[1];
     }
+    
+    public void deleteTask(Taches t, List<Taches> all) throws Exception{
+         Session session = null;
+        Transaction tr = null;
+        try {
+            session = getSession().getSessionFactory().openSession();
+            tr = session.beginTransaction();
+            deleteTask(session,t,all);
+             tr.commit();
+        } catch (Exception e) {
+            if (tr != null) {
+                tr.rollback();
+            }
+            throw e;
+        } finally {
+            if (session != null) {
+                session.close();
+            }
+        }
+    }
 
     public void createTask(Taches t, List<Taches> all) throws Exception {
         Session session = null;

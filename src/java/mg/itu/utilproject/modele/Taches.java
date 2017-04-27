@@ -10,20 +10,17 @@ public class Taches extends BaseModele {
     private String description;
     private Date dateDebut;
     private Date dateFin;
-    private int predecesseur;
     private Date deadlineTache;
     private int idmere;
-    private String duree;
-    private String css;
     private int niveau;
     private int ligne;
     private List<Taches> soustache;
 
-    public Taches(String description, Date dateDebut, Date dateFin, int predecesseur, Date deadlineTache, int prop) {
+    public Taches(String description, Date dateDebut,int niveau, Date dateFin, Date deadlineTache, int prop) {
         this.description = description;
         this.dateDebut = dateDebut;
         this.dateFin = dateFin;
-        this.predecesseur = predecesseur;
+        this.niveau=niveau;
         this.deadlineTache = deadlineTache;
         this.ligne = prop;
     }
@@ -45,13 +42,11 @@ public class Taches extends BaseModele {
     }
 
     public String getCss() {
-        this.css = "padding-left:" + this.getNiveau() * 40 + "px";
+        String css = "padding-left:" + this.getNiveau() * 40 + "px";
         return css;
     }
 
-    public void setCss(String css) {
-        this.css = css;
-    }
+ 
 
     public List<Taches> getSoustache() {
         return soustache;
@@ -114,13 +109,6 @@ public class Taches extends BaseModele {
         this.dateFin = dateFin;
     }
 
-    public int getPredecesseur() {
-        return predecesseur;
-    }
-
-    public void setPredecesseur(int predecesseur) {
-        this.predecesseur = predecesseur;
-    }
 
     public Date getDeadlineTache() {
         return deadlineTache;
@@ -130,13 +118,14 @@ public class Taches extends BaseModele {
         this.deadlineTache = deadlineTache;
     }
 
-    public String getDuree() {
+    public String duree() {
+         String duree;
         if (this.getDateMax() != null && this.getDateMin() != null) {
             Long wawa = this.getDateMax().getTime() - this.getDateMin().getTime();
-            this.duree = (wawa / 3600 / 1000 / 24) + "";
-            return this.duree;
+           duree = (wawa / 3600 / 1000 / 24) + "";
+            return duree;
         }
-        return this.duree = "undefined";
+        return duree = "undefined";
     }
 
 }

@@ -17,14 +17,10 @@
         <property name="description" column="description" type="string"/>
         <property name="dateDebut" column="datedebut" type="date"/>
         <property name="dateFin" column="datefin" type="date"/>
-        <property name="predecesseur" column="predecesseur" type="int"/>
+        <property name="niveau" column="predecesseur" type="int"/>
         <property name="deadlineTache" column="deadlinetache" type="date"/>
         <property name="idmere" column="idmere" type="int"/>
         <property name="ligne" column="ligne" type="int"/>
-                
-        <subclass class="mg.itu.utilproject.modele.Ressource" table="ressource">
-            <one-to-one name="one" class="mg.itu.utilproject.modele.Membres" />
-            <one-to-one name="association" class="mg.itu.utilproject.modele.BaseModele" />
-        </subclass>
+        
     </class>
 </hibernate-mapping>

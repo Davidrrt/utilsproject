@@ -41,8 +41,8 @@ public class BaseService {
         return session.findAllById(obj);
     }
 
-    public void findoneByid(BaseModele obj) throws Exception {
-        session.findOneById(obj);
+    public BaseModele findoneByid(BaseModele obj) throws Exception {
+      return  session.findOneById(obj);
     }
     public void delete(Session ses, BaseModele obj) throws Exception {
         session.delete(ses, obj);

@@ -6,10 +6,38 @@
  
 <struts>
     <!-- Add your configuration elements here -->
-    <package name="utilsproject" extends="struts-default">
+    <package name="utilproject" extends="struts-default">
+        <action name="project" class="mg.itu.utilproject.controller.ProjectAction">
+            <result name="success">/www/project.jsp</result>
+            <result name="failure">/www/failure.jsp</result>
+        </action>
         <action name="login" class="mg.itu.utilproject.controller.LoginAction">
-             <result name="success">/feuille.jsp</result>
-             <result name="failure">/login.jsp</result>
+            <result name="success">/www/redirect.jsp</result>
+            <result name="failure">/www/login.jsp</result>
+        </action>
+        <action name="sheet" class="mg.itu.utilproject.controller.SheetAction">
+            <result name="success">/www/liste.jsp</result>
+            <result name="failure">/www/failure.jsp</result>
+        </action>
+        <action name="task" class="mg.itu.utilproject.controller.TaskAction">
+            <result name="success">/www/simple.jsp</result>
+            <result name="failure">/www/failure.jsp</result>
+        </action>
+        <action name="gantt" class="mg.itu.utilproject.controller.GantAction">
+            <result name="success">/www/feuille.jsp</result>
+            <result name="failure">/www/failure.jsp</result>
+        </action>
+        <action name="ressource" class="mg.itu.utilproject.controller.RessourceAction">
+            <result name="success">/www/collab.jsp</result>
+            <result name="failure">/www/failure.jsp</result>
+        </action>
+        <action name="single" class="mg.itu.utilproject.controller.EtatAction">
+            <result name="success">/www/single.jsp</result>
+            <result name="failure">/www/failure.jsp</result>
+        </action>
+        <action name="logout" class="mg.itu.utilproject.controller.LogoutAction">
+            <result name="success">/index.jsp</result>
+            <result name="failure">/www/failure.jsp</result>
         </action>
     </package>
 </struts>

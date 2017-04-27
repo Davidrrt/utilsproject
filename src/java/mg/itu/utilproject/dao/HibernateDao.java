@@ -112,7 +112,6 @@ public class HibernateDao {
         try {
             session = getSessionFactory().openSession();
             Criteria criteria = session.createCriteria(obj.getClass());
-            //criteria.add(Restrictions.eq(colonne, obj.getId()));
             this.where(criteria, obj);
             return criteria.list();
         } catch (Exception ex) {
@@ -124,7 +123,7 @@ public class HibernateDao {
         }
     }
 
-    public void findOneById(BaseModele obj) throws Exception {
+    public BaseModele findOneById(BaseModele obj) throws Exception {
         Session session = null;
         try {
             session = getSessionFactory().openSession();
@@ -132,7 +131,7 @@ public class HibernateDao {
             //Criterion rest2 = Restrictions.and(Restrictions.eq(colonne, condition), Restrictions.eq(colonne1, condition1));
             this.where(criteria, obj);
             List<BaseModele> one = criteria.list();
-            obj = one.get(0);
+            return one.get(0);
         } catch (Exception ex) {
             throw ex;
         } finally {
@@ -171,12 +170,30 @@ public class HibernateDao {
         for (i = 0; i < attribue.length; i++) {
             String apresGet = attribue[i].getName().substring(0, 1).toUpperCase() + attribue[i].getName().substring(1, attribue[i].getName().length());
             String methode = "get" + apresGet;
-            Method m = model.getClass().getMethod(methode, (Class<?>) null);
-            Object o = m.invoke(model, (Object) null);
+            Class<?> maclasse = model.getClass();
+            Object o = maclasse.getMethod(methode).invoke(model);
             if (o != null) {
-                criteria.add(Restrictions.eq(attribue[i].getName(), o));
+                if (testInt(o) != 0) {
+                    System.out.print("=====================>" + testInt(o));
+                    criteria.add(Restrictions.eq(attribue[i].getName(), o));
+                }
+
             }
         }
+    }
 
+    public int testInt(Object wa) {
+        if (wa instanceof Integer) {
+            try {
+                int b = (int) wa;
+                return b;
+            } catch (IndexOutOfBoundsException e) {
+                return 0;
+            }
+        }
+        if ((wa instanceof Double)||(wa instanceof Float)) {
+            return 0;
+        }
+        return -1;
     }
 }
